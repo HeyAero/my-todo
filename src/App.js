@@ -1,11 +1,11 @@
 import './App.scss';
-import Tasks from './components/Tasks';
+import Task from './components/Task';
 
 function App() {
   return (
     <div className='container'>
       <h1 className='text-center py-2'>My Todo</h1>
-      <Tasks />
+      <Task />
       <div className='container'></div>
     </div>
   );

@@ -24,6 +24,13 @@ const Task = () => {
       console.log('empty - no value');
     }
   };
+
+  const removeItem = (id) => {
+    setTasks((tasks) => {
+      return tasks.filter((task) => task.id !== id);
+    });
+  };
+
   return (
     <>
       <article className=''>
@@ -53,13 +60,16 @@ const Task = () => {
           <h3>Todo list</h3>
         </div>
         {tasks.map((task, index) => {
+          console.log('creating item');
           const { id, name, finished } = task;
           return (
             <div className='item row align-items-center' key={id}>
               <div className='col mr-auto'>
                 <h5>{name}</h5>
               </div>
-              <button className='btn btn-danger'>Remove</button>
+              <button className='btn btn-danger' onClick={() => removeItem(id)}>
+                Remove
+              </button>
             </div>
           );
         })}
