@@ -13,3 +13,10 @@
   border-bottom: 1px solid #bfbfbf;
   padding: 10px;
 }
+
+.toggle-finished {
+  text-decoration: none;
+  input:checked {
+    text-decoration: line-through;
+  }
+}

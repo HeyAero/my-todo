@@ -3,7 +3,6 @@ import './Task.scss';
 
 const Task = () => {
   const [tasks, setTasks] = useState([]);
-
   const [name, setName] = useState('');
   const [finished, setFinished] = useState(false);
 
@@ -57,13 +56,16 @@ const Task = () => {
       </article>
       <div className='item-list mt-3'>
         <div className='item-header'>
-          <h3>Todo list</h3>
+          <h3>To-do list</h3>
         </div>
         {tasks.map((task, index) => {
           console.log('creating item');
           const { id, name, finished } = task;
           return (
             <div className='item row align-items-center' key={id}>
+              <div>
+                <input className='checkbox' type='checkbox' id='isFinished' />
+              </div>
               <div className='col mr-auto'>
                 <h5>{name}</h5>
               </div>
